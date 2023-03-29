@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import "../src/styles/animation.css";
+
+.page {
+  height: 100vh;
+  background-image: url('../src/img/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile {
+  height: 100vh;
+  margin-top: 84px !important;
+}
+
+.page-r {
+  height: 100vh;
+  background-image: url('../src/img/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login {
+  height: 48%;
+  margin-top: 84px !important;
+}
+
+.nav-link,
+h1,
+h4,
+h5,
+.title,
+.log,
+.newscript {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #333333;
+}
+
+form {
+  position: static;
+}
+
+.alert {
+  font-size: 12px !important;
+  padding: 0% !important;
+  margin: 0% !important;
+}
+
+.frame {
+  display: contents !important;
+}
+
+.underline {
+  border-bottom: 1px solid #000;
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+}
+
+.underline2 {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+}
+
+.navbar {
+  padding: 35px !important;
+
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}

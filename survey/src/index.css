@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 10px;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+  transition: all 0.3s ease !important;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: #FFB330;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid #FFB330;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="radio"]:hover {
+  color: #FFB330;
+}
+
+.btn {
+  background-color: #FFB330 !important;
+  color: white !important;
+
+  transition: all 0.5s ease !important;
+}
+
+.btn:hover {
+  background-color: white !important;
+  color: #FFB330 !important;
+}
+
+.btn:active {
+  background-color: #FFB330 !important;
+  color: white !important;
+}
+
+h4 {
+  margin: 50px 0px !important;
+}
+
+.title {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.App {
+  padding: 50px;
+}
