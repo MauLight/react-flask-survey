@@ -6,6 +6,7 @@ from flask_jwt_extended import JWTManager
 from models import db
 from routes.main import bpMain
 from routes.users import bpUser
+from routes.survey import bpSurvey
 import os
 
 load_dotenv()
@@ -32,6 +33,7 @@ CORS(app)
 
 
 app.register_blueprint(bpUser, url_prefix='/api')
+app.register_blueprint(bpSurvey, url_prefix='/api')
 
 if __name__ == '__main__':
     app.run()

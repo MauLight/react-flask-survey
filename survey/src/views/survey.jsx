@@ -1,114 +1,116 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useContext } from 'react';
+import { Context } from "../context/appContext";
+import { useNavigate } from "react-router-dom";
 
 const reducer = (state, action) => {
     // eslint-disable-next-line
     switch (action.type) {
-        case 'Q1': {
+        case 'q1': {
             return {
                 ...state,
-                Q1: action.Q1,
+                q1: action.q1,
             };
         }
-        case 'Q2': {
+        case 'q2': {
             return {
                 ...state,
-                Q2: action.Q2
+                q2: action.q2
             };
         }
-        case 'Q3': {
+        case 'q3': {
             return {
                 ...state,
-                Q3: action.Q3
+                q3: action.q3
             };
         }
-        case 'Q4': {
+        case 'q4': {
             return {
                 ...state,
-                Q4: action.Q4
+                q4: action.q4
             };
         }
-        case 'Q5': {
+        case 'q5': {
             return {
                 ...state,
-                Q5: action.Q5
+                q5: action.q5
             };
         }
-        case 'Q6': {
+        case 'q6': {
             return {
                 ...state,
-                Q6: action.Q6
+                q6: action.q6
             };
         }
-        case 'Q7': {
+        case 'q7': {
             return {
                 ...state,
-                Q7: action.Q7
+                q7: action.q7
             };
         }
-        case 'Q8': {
+        case 'q8': {
             return {
                 ...state,
-                Q8: action.Q8
+                q8: action.q8
             };
         }
-        case 'Q9': {
+        case 'q9': {
             return {
                 ...state,
-                Q9: action.Q9
+                q9: action.q9
             };
         }
-        case 'Q10': {
+        case 'q10': {
             return {
                 ...state,
-                Q10: action.Q10
+                q10: action.q10
             };
         }
-        case 'Q11': {
+        case 'q11': {
             return {
                 ...state,
-                Q11: action.Q11
+                q11: action.q11
             };
         }
-        case 'Q12': {
+        case 'q12': {
             return {
                 ...state,
-                Q12: action.Q12
+                q12: action.q12
             };
         }
-        case 'Q13': {
+        case 'q13': {
             return {
                 ...state,
-                Q13: action.Q13
+                q13: action.q13
             };
         }
-        case 'Q14': {
+        case 'q14': {
             return {
                 ...state,
-                Q14: action.Q14
+                q14: action.q14
             };
         }
-        case 'Q15': {
+        case 'q15': {
             return {
                 ...state,
-                Q15: action.Q15
+                q15: action.q15
             };
         }
-        case 'Q16': {
+        case 'q16': {
             return {
                 ...state,
-                Q16: action.Q16
+                q16: action.q16
             };
         }
-        case 'Q17': {
+        case 'q17': {
             return {
                 ...state,
-                Q17: action.Q17
+                q17: action.q17
             };
         }
-        case 'Q18': {
+        case 'q18': {
             return {
                 ...state,
-                Q18: action.Q18
+                q18: action.q18
             };
         }
     }
@@ -117,79 +119,93 @@ const reducer = (state, action) => {
 
 function Survey() {
 
-    const [state, dispatch] = useReducer(reducer, { Q1: "", Q2: "", Q3: "", Q4: "", Q5: "", Q6: "", Q7: "", Q8: "", Q9: "", Q10: "", Q11: "", Q12: "", Q13: "", Q14: "", Q15: "", Q16: "", Q17: "", Q18: "" });
+    const { store, actions } = useContext(Context);
+    const [state, dispatch] = useReducer(reducer, { q1: "", q2: "", q3: "", q4: "", q5: "", q6: "", q7: "", q8: "", q9: "", q10: "", q11: "", q12: "", q13: "", q14: "", q15: "", q16: "", q17: "", q18: "", user_id: store.credentials });
+    const navigate = useNavigate();
 
-    
+    console.log(store.credentials);
+
     const handleQ1 = (e) => {
-        dispatch({ type: 'Q1', Q1: e.target.value });
+        dispatch({ type: 'q1', q1: e.target.value });
     };
 
     const handleQ2 = (e) => {
-        dispatch({ type: 'Q2', Q2: e.target.value });
+        dispatch({ type: 'q2', q2: e.target.value });
     };
     const handleQ3 = (e) => {
-        dispatch({ type: 'Q3', Q3: e.target.value });
+        dispatch({ type: 'q3', q3: e.target.value });
     };
     const handleQ4 = (e) => {
-        dispatch({ type: 'Q4', Q4: e.target.value });
+        dispatch({ type: 'q4', q4: e.target.value });
     };
     const handleQ5 = (e) => {
-        dispatch({ type: 'Q5', Q5: e.target.value });
+        dispatch({ type: 'q5', q5: e.target.value });
     };
     const handleQ6 = (e) => {
-        dispatch({ type: 'Q6', Q6: e.target.value });
+        dispatch({ type: 'q6', q6: e.target.value });
     };
     const handleQ7 = (e) => {
-        dispatch({ type: 'Q7', Q7: e.target.value });
+        dispatch({ type: 'q7', q7: e.target.value });
     };
     const handleQ8 = (e) => {
-        dispatch({ type: 'Q8', Q8: e.target.value });
+        dispatch({ type: 'q8', q8: e.target.value });
     };
     const handleQ9 = (e) => {
-        dispatch({ type: 'Q9', Q9: e.target.value });
+        dispatch({ type: 'q9', q9: e.target.value });
     };
     const handleQ10 = (e) => {
-        dispatch({ type: 'Q10', Q10: e.target.value });
+        dispatch({ type: 'q10', q10: e.target.value });
     };
     const handleQ11 = (e) => {
-        dispatch({ type: 'Q11', Q11: e.target.value });
+        dispatch({ type: 'q11', q11: e.target.value });
     };
     const handleQ12 = (e) => {
-        dispatch({ type: 'Q12', Q12: e.target.value });
+        dispatch({ type: 'q12', q12: e.target.value });
     };
     const handleQ13 = (e) => {
-        dispatch({ type: 'Q13', Q13: e.target.value });
+        dispatch({ type: 'q13', q13: e.target.value });
     };
     const handleQ14 = (e) => {
-        dispatch({ type: 'Q14', Q14: e.target.value });
+        dispatch({ type: 'q14', q14: e.target.value });
     };
     const handleQ15 = (e) => {
-        dispatch({ type: 'Q15', Q15: e.target.value });
+        dispatch({ type: 'q15', q15: e.target.value });
     };
 
     const handleQ16 = (e) => {
-        dispatch({ type: 'Q16', Q16: e.target.value });
+        dispatch({ type: 'q16', q16: e.target.value });
     };
 
     const handleQ17 = (e) => {
-        dispatch({ type: 'Q17', Q17: e.target.value });
+        dispatch({ type: 'q17', q17: e.target.value });
     };
     const handleQ18 = (e) => {
-        dispatch({ type: 'Q18', Q18: e.target.value });
+        dispatch({ type: 'q18', q18: e.target.value });
+    };
+    const handleUser_Id = (e) => {
+        dispatch({ type: 'user_id', user_id: store.credentials });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(state);
+        handleUser_Id();
+        if (state.q1 !== "" && state.q2 !== "" && state.q3 !== "" && state.q4 !== "" && state.q5 !== "" && state.q6 !== "" && state.q7 !== "" && state.q8 !== "" && state.q9 !== "" && state.q10 !== "" && state.q11 !== "" && state.q12 !== "" && state.q13 !== "" && state.q14 !== "" && state.q15 !== "" && state.Q16 !== "" && state.q18 !== "") {
+            actions.postSurvey(state);
+            alert("THANK YOU!");
+            navigate("/");
+        }
+        else {
+            alert("You have to answer all the questions before submitting :)")
+        }
 
-    }
+    };
 
 
     return (
         <div className="container">
             <div className='d-flex justify-content-between'>
                 <h1 className='title'>SCREENWRITERS' QUEST Survey</h1>
-                
+
             </div>
             <form className='mt-5' onSubmit={handleSubmit}>
                 <h2>Student specific questions:</h2>

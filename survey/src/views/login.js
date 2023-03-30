@@ -9,8 +9,6 @@ const LogIn = () => {
 
     const { store, actions } = useContext(Context);
     const [username, setUserName] = useState('');
-    const token = sessionStorage.getItem("token");
-    console.log(token);
     const navigate = useNavigate();
 
     const style = {

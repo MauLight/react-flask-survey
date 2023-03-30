@@ -16,15 +16,8 @@ def create_token():
         # the user was not found on the database
         return jsonify({"msg": "Bad username"}), 401
     else:
-        access_token = create_access_token(identity=user.username)
-        return jsonify({"token": access_token, "username": user.username})
-
-
-@bpUser.route('/users', methods=['GET'])
-def all_users():
-    users = User.query.all()
-    users = list(map(lambda user: user.serialize(), users))
-    return jsonify(users), 200
+        access_token = create_access_token(identity=user.id)
+        return jsonify({"token": access_token, "username": user.id})
 
 
 @bpUser.route('/user', methods=['POST'])
@@ -50,3 +43,15 @@ def get_user():
     }
 
     return jsonify(credentials)
+
+
+@bpUser.route('/users', methods=['GET'])
+def all_users():
+    users = User.query.all()
+    users = list(map(lambda user: user.serialize_with_survey(), users))
+    return jsonify(users), 200
+
+@bpUser.route('/users/<int:id>', methods = ['GET'])
+def user_by_id(id):
+    user = User.query.get(id)
+    return jsonify(user.serialize_with_survey()), 200
