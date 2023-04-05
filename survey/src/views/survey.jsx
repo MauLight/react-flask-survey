@@ -202,21 +202,21 @@ function Survey() {
 
 
     return (
-        <div className="container">
-            <div className='d-flex justify-content-between'>
-                <h1 className='title'>SCREENWRITERS' QUEST Survey</h1>
-
+        <div className="container mt-5">
+            <div className='d-block text-center'>
+                <h1 className='title'>Screenwriters' Quest Survey</h1>
+                <p className='title'>A short survey for the quest evaluation and improvement.</p>
             </div>
             <form className='mt-5' onSubmit={handleSubmit}>
                 <h2>Student specific questions:</h2>
                 <div className='my-5'>
                     <h4>1.	Hello! Please, introduce yourself (name, last name).</h4>
-                    <input id='one' name='questionone' type="text" value={state.Q1} onChange={handleQ1} />
+                    <input className='w-50' id='one' name='questionone' type="text" value={state.Q1} onChange={handleQ1} />
 
                 </div>
                 <div className='my-5'>
                     <h4>2.	Where are you from?</h4>
-                    <input id='one' name='questionone' type="text" value={state.Q2} onChange={handleQ2} />
+                    <input className='w-50' id='one' name='questionone' type="text" value={state.Q2} onChange={handleQ2} />
 
                 </div>
                 <h2>Course material-specific questions:</h2>
@@ -410,8 +410,8 @@ function Survey() {
                     <label htmlFor='four'>No</label>
                     <input id='four' name='questioneighteen' type="radio" value="3" onChange={handleQ18} />
                 </div>
-                <div className='my-5'>
-                    <button className='btn rounded-0 border' onClick={handleSubmit} >Submit</button>
+                <div className='my-5 d-flex justify-content-center'>
+                    <button className='btn rounded-0 border submit' onClick={handleSubmit} >Submit</button>
                 </div>
             </form>
         </div>
